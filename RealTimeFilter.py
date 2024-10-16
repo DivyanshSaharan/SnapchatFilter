@@ -40,12 +40,12 @@ while True:
 
     for (nx, ny, nw, nh) in nose:
         moustache_resized = cv2.resize(moustache, (nw, int(nh / 2)))
-        overlay_image_alpha(frame, moustache_resized, nx, ny + int(nh / 2), moustache_resized[:, :, 3])
+        overlay_image_alpha(frame, moustache_resized, nx, ny + int(nh / 1.5), moustache_resized[:, :, 3])
         break
 
     for (ex, ey, ew, eh) in eyes:
         sunglasses_resized = cv2.resize(sunglasses, (ew * 2, eh))
-        overlay_image_alpha(frame, sunglasses_resized, ex - ew // 2, ey - eh // 2, sunglasses_resized[:, :, 3])
+        overlay_image_alpha(frame, sunglasses_resized, ex - ew // 2, ey, sunglasses_resized[:, :, 3])
         break
     
     cv2.imshow("Video Frame", frame)
